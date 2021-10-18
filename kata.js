@@ -1,13 +1,5 @@
 const accum = (s) => {
-  const arrS = s.toLowerCase().split("");
-  let result = [];
-  for (let i = 0; i < s.length; i++) {
-    result.push(arrS[i].toUpperCase());
-    for (let j = 0; j < i; j++) {
-      result[i] += arrS[i];
-    }
-  }
-  return result.join('-');
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');;
 };
 
 console.log(accum("abcd"));
